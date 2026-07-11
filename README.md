@@ -1,11 +1,7 @@
 # blue-osprey-test
 
 
-<!-- Optional repository hero image:
-<p align="center">
-  <img src="docs/blue-osprey.png" alt="Blue Osprey" width="360">
-</p>
--->
+![Blue-Osprey Image](Blue-Osprey.png)
 
 **Blue Osprey** is a security-focused Codex agent toolkit made of reusable skills, global guidance, helper scripts, and conservative configuration.
 
