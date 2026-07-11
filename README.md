@@ -1,4 +1,4 @@
-# blue-osprey-test
+# Blue-Osprey
 
 
 ![Blue-Osprey Image](Blue-Osprey.png)
