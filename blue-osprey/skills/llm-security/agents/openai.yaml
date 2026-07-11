@@ -1,0 +1,7 @@
+interface:
+  display_name: "LLM Security"
+  short_description: "Review LLM application security risks"
+  default_prompt: "Use $llm-security to review LLM application security risks."
+
+policy:
+  allow_implicit_invocation: true

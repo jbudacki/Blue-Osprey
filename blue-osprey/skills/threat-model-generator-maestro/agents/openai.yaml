@@ -1,0 +1,7 @@
+interface:
+  display_name: "MAESTRO Threat Model"
+  short_description: "Threat model agentic AI with MAESTRO"
+  default_prompt: "Use $threat-model-generator-maestro to threat model agentic AI with MAESTRO."
+
+policy:
+  allow_implicit_invocation: true

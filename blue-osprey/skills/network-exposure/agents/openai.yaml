@@ -1,0 +1,7 @@
+interface:
+  display_name: "Network Exposure"
+  short_description: "Find public network exposure in IaC"
+  default_prompt: "Use $network-exposure to find public network exposure in IaC."
+
+policy:
+  allow_implicit_invocation: true

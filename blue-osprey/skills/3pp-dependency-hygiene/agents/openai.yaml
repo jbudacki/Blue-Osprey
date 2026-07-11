@@ -1,0 +1,7 @@
+interface:
+  display_name: "Dependency Hygiene"
+  short_description: "Review dependency supply-chain risk"
+  default_prompt: "Use $3pp-dependency-hygiene to review dependency supply-chain risk."
+
+policy:
+  allow_implicit_invocation: true

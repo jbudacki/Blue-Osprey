@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vibe Code Detection"
+  short_description: "Detect generated-code patterns in Python"
+  default_prompt: "Use $vibe-code-detection to detect generated-code patterns in Python."
+
+policy:
+  allow_implicit_invocation: true

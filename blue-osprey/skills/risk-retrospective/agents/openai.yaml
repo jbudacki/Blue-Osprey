@@ -1,0 +1,7 @@
+interface:
+  display_name: "Risk Retrospective"
+  short_description: "Draft security risk decision documents"
+  default_prompt: "Use $risk-retrospective to draft security risk decision documents."
+
+policy:
+  allow_implicit_invocation: true

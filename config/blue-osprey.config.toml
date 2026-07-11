@@ -1,0 +1,46 @@
+# Source for the installed ~/.codex/blue-osprey.config.toml profile.
+# This file is layered on top of the base config with: codex --profile blue-osprey
+# Keep defaults conservative; opt into broader access per session or trusted repo.
+
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "user"
+allow_login_shell = false
+web_search = "cached"
+project_doc_max_bytes = 32768
+
+[sandbox_workspace_write]
+network_access = false
+# Add extra writable roots only when a workflow truly spans directories.
+# writable_roots = ["/path/to/other/workspace"]
+
+# Enable only when a task needs command-level network access, then prefer allowlists.
+# [features.network_proxy]
+# enabled = true
+# domains = {
+#   "api.openai.com" = "allow",
+#   "github.com" = "allow",
+#   "raw.githubusercontent.com" = "allow",
+#   "pypi.org" = "allow",
+#   "files.pythonhosted.org" = "allow",
+#   "registry.npmjs.org" = "allow"
+# }
+# allow_local_binding = false
+
+# Prefer a single AGENTS.md source of truth. Uncomment fallback names only during migration.
+# project_doc_fallback_filenames = ["CLAUDE.md", ".cursorrules", ".github/copilot-instructions.md"]
+
+# MCP servers are disabled-by-omission. Add only scoped, reviewed servers.
+# Example pattern:
+# [mcp_servers.docs]
+# command = "npx"
+# args = ["-y", "<reviewed-docs-mcp-package>"]
+# default_tools_approval_mode = "prompt"
+# enabled_tools = ["search", "read"]
+# enabled = true
+
+# Disable noisy or rarely used skills without deleting them by adding entries after install.
+# Example after install:
+# [[skills.config]]
+# path = "/Users/<you>/.agents/skills/humanizer/SKILL.md"
+# enabled = false

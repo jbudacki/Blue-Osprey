@@ -1,0 +1,7 @@
+interface:
+  display_name: "Model Security Review"
+  short_description: "Assess AI/ML model deployment security"
+  default_prompt: "Use $model-security-review to assess AI/ML model deployment security."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,38 @@
+# Portable subset of the source ~/.codex/config.toml.
+#
+# Intentionally omitted: authentication and sessions, machine-local commands and
+# paths, marketplace cache metadata, project trust records, runtime-managed MCP
+# wiring, telemetry, logs, history, and UI onboarding state.
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[features]
+js_repl = false
+
+[desktop]
+conversationDetailMode = "STEPS_PROSE"
+sansFontSize = 14
+codeFontSize = 13
+ambient-suggestions-enabled = false
+followUpQueueMode = "queue"
+dock-icon-preference = "app-default"
+preventSleepWhileRunning = true

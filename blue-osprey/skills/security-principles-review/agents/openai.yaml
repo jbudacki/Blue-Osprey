@@ -1,0 +1,7 @@
+interface:
+  display_name: "Security Principles Review"
+  short_description: "Score security decisions against principles"
+  default_prompt: "Use $security-principles-review to score security decisions against principles."
+
+policy:
+  allow_implicit_invocation: true

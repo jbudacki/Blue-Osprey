@@ -1,0 +1,7 @@
+interface:
+  display_name: "IAM Security"
+  short_description: "Review AWS IAM least-privilege risk"
+  default_prompt: "Use $iam-security to review AWS IAM least-privilege risk."
+
+policy:
+  allow_implicit_invocation: true

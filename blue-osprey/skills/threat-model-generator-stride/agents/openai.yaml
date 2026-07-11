@@ -1,0 +1,7 @@
+interface:
+  display_name: "STRIDE Threat Model"
+  short_description: "Threat model systems with STRIDE"
+  default_prompt: "Use $threat-model-generator-stride to threat model systems with STRIDE."
+
+policy:
+  allow_implicit_invocation: true

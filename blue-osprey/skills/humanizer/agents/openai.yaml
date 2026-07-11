@@ -1,0 +1,7 @@
+interface:
+  display_name: "Humanizer"
+  short_description: "Make AI-looking writing sound natural"
+  default_prompt: "Use $humanizer to make AI-looking writing sound natural."
+
+policy:
+  allow_implicit_invocation: true

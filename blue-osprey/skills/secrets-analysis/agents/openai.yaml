@@ -1,0 +1,7 @@
+interface:
+  display_name: "Secrets Analysis"
+  short_description: "Find hardcoded credentials and tokens"
+  default_prompt: "Use $secrets-analysis to find hardcoded credentials and tokens."
+
+policy:
+  allow_implicit_invocation: true

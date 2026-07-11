@@ -1,0 +1,7 @@
+interface:
+  display_name: "Crypto Analysis"
+  short_description: "Review cryptographic implementation risk"
+  default_prompt: "Use $crypto-analysis to review cryptographic implementation risk."
+
+policy:
+  allow_implicit_invocation: true

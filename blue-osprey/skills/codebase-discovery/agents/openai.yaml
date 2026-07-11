@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codebase Discovery"
+  short_description: "Map codebase structure and security signals"
+  default_prompt: "Use $codebase-discovery to map codebase structure and security signals."
+
+policy:
+  allow_implicit_invocation: true
