@@ -73,7 +73,7 @@ Use this checklist during Phase 3 (Threat Analysis). For each category, decide: 
 
 ### Harmful Content
 - CSAM, weapons, malware, bioweapons evaluation
-- AMC Corp-specific: customer data leakage, internal system info disclosure
+- Organization-specific prohibited content, customer data leakage, and internal system information disclosure
 
 ### Tool Use / Agent Risks
 - Authentication on tool endpoints
@@ -130,4 +130,4 @@ Use this checklist during Phase 3 (Threat Analysis). For each category, decide: 
 - eval(), exec(), pickle.load() on network input
 - No timeout / no max payload on /execute endpoints
 - Hardcoded secrets in code or config
-- Cross-account trust without aws:PrincipalOrgID or sts:ExternalId conditions
+- Cross-account or cross-tenant trust without bounded principals, intended audiences, and contextual conditions

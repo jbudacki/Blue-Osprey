@@ -1,4 +1,3 @@
-0111eff6119bac49e2ac859e2b8b20651182798d06ac1218ca0882c30ce2747c  ./README.md
 014e896b2d7e7d86af7b9e9fd0e000be9d62a077bbd81bc5a888b252580febac  ./blue-osprey/skills/secrets-analysis/SKILL.md
 05fd46579dfd7180556fb50ed5acb12debc455fabaeb60363a4f0b496a7c9e42  ./blue-osprey/skills/security-review/SKILL.md
 06483cdbd982916c167d6a8dbf82d349302c1e704f7f8167d606da9e5b9880b4  ./blue-osprey/skills/secrets-analysis/agents/openai.yaml
@@ -9,10 +8,8 @@
 1c4bf91b938c9871959863ccf0ef8b18e9213f8c80e9fb509ace258649f72052  ./blue-osprey/skills/codebase-discovery/scripts/discover.py
 2562fdd51e3b3b8a0a4f196acecdb29b3a149ee7dcb4460ac9d691c5056b361b  ./install.sh
 2ac12551c0d116e9c033e7818c32d00c23ffca53d53fa13156d3d99df2dc8bf4  ./config/blue-osprey.config.toml
-2d9c24cc924428dad5d902f828d1634de6726d578b97bed8c40784d2a1d28289  ./blue-osprey/skills/model-security-review/SKILL.md
 2f31e5a52092abb1903cc0b8364fa80b67bdefb56e800db706b78e6855b3f97a  ./blue-osprey/skills/vibe-code-detection/agents/openai.yaml
 2fee61b34e127aacad099a461a4945d39a71507bcc4628425acad2967b8aac74  ./blue-osprey/skills/vibe-code-detection/references/reference.md
-33d9dba0f0d52851539129df711421d591c421bb6ab88f29f3083154cb5b68cd  ./blue-osprey/skills/model-security-review/references/threat-categories.md
 3521a76358db668dbbe27434717203136dc29ec7ccef7c970939871860396ad2  ./blue-osprey/skills/vibe-code-detection/SKILL.md
 38a20fa6cce824bf5b6737c0782ea772d117d5b4f088efd7043abad8fb126f7d  ./blue-osprey/skills/vibe-code-detection/scripts/analyze.py
 42207c13c2c3450c08026c9063a4c50496f42a69788a3ffe40f49b652678ec69  ./blue-osprey/skills/security-principles-review/SKILL.md
@@ -29,6 +26,8 @@
 73372e3464eb07ab845c7436411610cc1f1e59c0ddec709cb8aa7a10d69128e9  ./blue-osprey/skills/codebase-discovery/SKILL.md
 73d19feffb164781572b2ef30ff52c2ad290497c48b802edd6b2220e03e16855  ./blue-osprey/skills/llm-security/references/reference.md
 75087b0ece252e112e1de8d06355e5d599dc80d3a67fe7ae85a739eed3b4e8c5  ./blue-osprey/skills/humanizer/agents/openai.yaml
+7a596d51c855b95664b59522b8146e4c7c050f4571dfd13b5abfffb303aa7444  ./README.md
+841bf42f1f1a5562b511a42f6c795198f54a444641b860512e373207b6ae1276  ./blue-osprey/skills/model-security-review/templates/model-security-review-template.md
 9087c12327604c9ca20029884334faa874e6ee58cd8e6237cc9991639120c51b  ./blue-osprey/skills/3pp-dependency-hygiene/SKILL.md
 910424478ce543275814348cefaae95562b5bbb3638569e1abdb454d2439c823  ./blue-osprey/skills/security-principles-review/agents/openai.yaml
 98a2d9799ba3b313f60c965fdcb5c66873dd1db747b86d0cc2849a204c4353e5  ./blue-osprey/skills/llm-security/SKILL.md
@@ -37,7 +36,6 @@
 a4b51b756254285add8af6e47a8badd297ce350c467a56d5b5314c2960aaf1b2  ./blue-osprey/skills/threat-model-generator-maestro/agents/openai.yaml
 b58c8eff702752bbb33ccff6c8742be0f5730a72c0abcc433f960ac8fb6f968f  ./blue-osprey/skills/network-exposure/SKILL.md
 b9fffcfff55be237dc6bea060914053257f8ba92d4d9de5714a0f0a33135a57d  ./blue-osprey/skills/risk-retrospective/SKILL.md
-c05768a0797084fad0c3364a690307ed89b428eaabab72b9ffe942bcb115e493  ./blue-osprey/skills/model-security-review/templates/model-security-review-template.md
 cac15deac551a0525ce54a70382c2f08336618e95e892f5835d3b6370dba4ef2  ./config/AGENTS.md
 ce88ab19c22af1010ae3c9a90e8438e83d6df975b81d2e9e84612de04cd6dd5d  ./blue-osprey/skills/risk-retrospective/agents/openai.yaml
 d0c6e97f7dd9ec81e24f9e338cb88ada0de0d3abe773e260141be974c63eca48  ./blue-osprey/skills/3pp-dependency-hygiene/agents/openai.yaml
@@ -47,6 +45,7 @@ e35f5955a437c08adee6fbb183361bece1ab836d1d7edd6901ebaa2a6d645322  ./blue-osprey/
 e5e8b94b946d9828bbc7e6376e788858175d288e78bea68aeaedab8529981b65  ./blue-osprey/skills/codebase-discovery/references/reference.md
 e77844f3f249104a29a19bfad63f4b8d28d723cb8d6bdac5f97c5d3c625a6fd8  ./blue-osprey/skills/llm-security/agents/openai.yaml
 eaa29df70dafad0b04550e24a2f3d9bc21e81963e797506ec00ac8897a31b18f  ./blue-osprey/skills/humanizer/SKILL.md
+ee015e4741949914cc9e4a0ed8d6d425d419a23334d3fdddeb2e6f893dd39060  ./blue-osprey/skills/model-security-review/references/threat-categories.md
 f27b173716df9e732f56b685845914369a554975a96dbc65ce10e8cb99d39a70  ./blue-osprey/skills/crypto-analysis/references/reference.md
-f27f55342f41ba6150aec7d134fb7bcb4f13244c2b4f151c3bc35170e17a2fba  ./blue-osprey/skills/model-security-review/references/README.md
+fb0334de2758fc4daebc9080585edb258a7e815fdb182d82307bdc8ea61099d5  ./blue-osprey/skills/model-security-review/SKILL.md
 ff686e352f0b7ae2b1bf3ceb2644a1a42c1efe68639b0678e96cb79d9673a380  ./blue-osprey/skills/codebase-discovery/agents/openai.yaml

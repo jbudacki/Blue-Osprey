@@ -1,182 +1,235 @@
-# [cite_start]Model Security Review - {{MODEL_NAME}} [cite: 1230]
+# Model Security Review - {{MODEL_NAME}}
 
-## [cite_start]Security Review Metadata [cite: 1231]
-* [cite_start]**Authors:** {{REVIEWER NAME}} [cite: 1232]
-* [cite_start]**Assessment Timeframe:** {{TIMEFRAME}} [cite: 1233]
-* [cite_start]**Work Item:** {{WORK_ITEM}} [cite: 1234]
-* [cite_start]**Resources:** [cite: 1235]
-  * [cite_start]Code: [cite: 1236, 1237]
-    * [cite_start]{{CODE REPO URL}} [cite: 1241]
-  * [cite_start]Paper: {{PAPER URL}} [cite: 1238]
-  * [cite_start]Blog Post: {{BLOG URL}} [cite: 1238]
-  * [cite_start]Model: {{MODEL URL}} [cite: 1239]
-  * [cite_start]Slack: Thread [cite: 1240]
-* [cite_start]**Legal/PLR:** {{PLR ID}} [cite: 1242]
-* [cite_start]**Engineering Contact:** {{ENG_CONTACTS}} [cite: 1243]
+## Security Review Metadata
 
-### [cite_start]Revision History [cite: 1244]
+- **Organization:** {{ORGANIZATION_OR_AMC_CORP}}
+- **Authors:** {{REVIEWER_NAMES}}
+- **Assessment Timeframe:** {{TIMEFRAME}}
+- **Work Item:** {{WORK_ITEM}}
+- **Decision Owner:** {{DECISION_OWNER}}
+- **Approval or Decision Record:** {{APPROVAL_RECORD}}
+- **Engineering Contacts:** {{ENGINEERING_CONTACTS}}
+- **Review Scope:** {{REVIEW_SCOPE}}
+- **Resources:**
+  - Code: {{CODE_REPOSITORY_OR_PATH}}
+  - Model card or registry record: {{MODEL_RECORD}}
+  - Paper or technical report: {{PAPER_OR_REPORT}}
+  - Rollout or deployment document: {{ROLLOUT_DOCUMENT}}
+  - Related decision or collaboration record: {{COLLABORATION_RECORD}}
 
-| Date | Version | Author(s) | [cite_start]Summary | [cite: 1245]
-[cite_start]|---|---|---|---| [cite: 1245]
-| {{DATE}} | 1.0 | {{REVIEWER NAME}} | [cite_start]Initial delivery | [cite: 1245]
+### Revision History
 
-## [cite_start]Security Recommendations [cite: 1246]
+| Date | Version | Author(s) | Summary |
+|---|---|---|---|
+| {{DATE}} | 1.0 | {{REVIEWER_NAMES}} | Initial delivery |
 
-### [cite_start]{{FINDING_1_TITLE}} [cite: 1247]
-[cite_start]{{FINDING_1_SUMMARY}} [cite: 1248]
+## Executive Assessment
 
-* [cite_start]**The Gap:** {{FINDING_1_GAP}} [cite: 1249]
-* [cite_start]**Question:** {{FINDING_1_QUESTION}} [cite: 1250]
-* [cite_start]**Recommendation:** {{FINDING_1_RECOMMENDATION}} [cite: 1251]
-  * [cite_start]{{FINDING_1_PROPOSED_MITIGATION}} [cite: 1252]
+- **Decision supported:** {{DECISION_SUPPORTED}}
+- **Overall risk:** {{OVERALL_RISK}}
+- **Recommendation:** {{OVERALL_RECOMMENDATION}}
+- **Residual risk:** {{RESIDUAL_RISK}}
+- **Material unknowns:** {{MATERIAL_UNKNOWNS}}
 
-## [cite_start]Overview [cite: 1253]
-[cite_start]Key capabilities include: [cite: 1254]
-* [cite_start]{{KEY_CAPABILITIES}} [cite: 1255, 1256]
+## Security Recommendations
 
-[cite_start]Intended {{INTEGRATION_CONTEXT}} use cases include: [cite: 1257]
-* [cite_start]{{INTENDED_USE_CASES}} [cite: 1258]
+### {{FINDING_1_TITLE}}
 
-## [cite_start]Scope [cite: 1259]
-[cite_start]The scope of the review will focus on the model: [cite: 1260]
-* [cite_start]**Model Name:** {{MODEL_NAME}} [cite: 1261]
-* [cite_start]**Base Model:** {{BASE_MODEL}} [cite: 1262]
-* [cite_start]**Architecture:** {{ARCHITECTURE}} [cite: 1263]
-* [cite_start]**Primary Adopters:** {{PRIMARY_ADOPTERS}} [cite: 1264]
+{{FINDING_1_SUMMARY}}
 
-### [cite_start]Technical Documents [cite: 1265]
-* [cite_start]**Internal Rollout Doc:** {{ROLLOUT DOC TITLE}} [cite: 1266]
-* [cite_start]**Legal/PLR:** {{PLR ID}} [cite: 1266]
-* [cite_start]**Hugging Face Collection:** {{MODEL URL}} [cite: 1266]
-* [cite_start]**License:** {{LICENSE}} [cite: 1266]
+- **Severity:** {{FINDING_1_SEVERITY}}
+- **Confidence:** {{FINDING_1_CONFIDENCE}}
+- **Gap:** {{FINDING_1_GAP}}
+- **Evidence:** {{FINDING_1_EVIDENCE}}
+- **Question:** {{FINDING_1_QUESTION}}
+- **Recommendation:** {{FINDING_1_RECOMMENDATION}}
+- **Owner:** {{FINDING_1_OWNER}}
+- **Verification:** {{FINDING_1_VERIFICATION}}
 
-### [cite_start]Product Usage [cite: 1267]
-* [cite_start]**Internal Model Name:** {{MODEL_NAME}} [cite: 1268]
-* [cite_start]**External Access:** {{EXTERNAL_ACCESS}} [cite: 1268]
-* [cite_start]**Feature-Owning Teams:** {{OWNING_TEAM}} [cite: 1268]
-* [cite_start]**Regions:** {{REGIONS}} [cite: 1268]
+## Overview
 
-### [cite_start]User Utterance and Topic Input [cite: 1269]
-* [cite_start]**API Compatibility:** {{API_COMPAT}} [cite: 1270]
-* [cite_start]**Input Handling:** {{INPUT_HANDLING}} [cite: 1270]
+### Capabilities
 
-### [cite_start]Model Output and Role [cite: 1271]
-* [cite_start]**Ownership:** {{OWNING_TEAM}} [cite: 1272]
-* [cite_start]**Role:** {{MODEL_ROLE}} [cite: 1272]
+{{KEY_CAPABILITIES}}
 
-## [cite_start]Model Development & Training [cite: 1273]
+### Intended Use Cases
 
-### [cite_start]Public Datasets [cite: 1274]
-[cite_start]{{PUBLIC_DATASETS}} [cite: 1275]
+{{INTENDED_USE_CASES}}
 
-### [cite_start]Data Generation (Synthetic Training Datasets) [cite: 1276]
-[cite_start]{{SYNTHETIC_DATA}} [cite: 1277]
-[cite_start]{{INTERNAL_DATA}} [cite: 1278]
+### Out-of-Scope or Prohibited Uses
 
-### [cite_start]Development and Fine Tuning [cite: 1279]
-* [cite_start]**Method:** {{TRAINING_METHOD}} [cite: 1280]
-* [cite_start]**Volume:** {{TRAINING_VOLUME}} [cite: 1280]
-* [cite_start]**Compute:** {{TRAINING_COMPUTE}} [cite: 1280]
+{{OUT_OF_SCOPE_USES}}
 
-### [cite_start]Seed Data [cite: 1281]
-[cite_start]{{SEED_DATA}} [cite: 1282]
+## Scope
 
-## [cite_start]Model Attestation [cite: 1283]
-[cite_start]In the {{MODEL_NAME}} Model Card, there is a specific cryptographic hash provided for the model: [cite: 1284]
-* [cite_start]**SHA-256 Hash:** {{MODEL_HASH}} This acts as a "signature" or attestation. [cite: 1285]
+- **Model Name and Version:** {{MODEL_NAME}}
+- **Base Model or Predecessor:** {{BASE_MODEL}}
+- **Architecture:** {{ARCHITECTURE}}
+- **Input Modality:** {{INPUT_MODALITY}}
+- **Output Modality:** {{OUTPUT_MODALITY}}
+- **Primary Adopters:** {{PRIMARY_ADOPTERS}}
+- **Access Model:** {{ACCESS_MODEL}}
+- **Deployment Regions:** {{REGIONS}}
+- **Owning Team:** {{OWNING_TEAM}}
 
-[cite_start]Whenever the model is downloaded (especially from an external source like Hugging Face), the engineering team should verify this hash to ensure the model weights have not been tampered with or replaced by a malicious payload. [cite: 1286]
+### Interfaces and Integrations
 
-## [cite_start]Instructions [cite: 1287]
+- **Interfaces:** {{INTERFACES}}
+- **Upstream Dependencies:** {{UPSTREAM_DEPENDENCIES}}
+- **Downstream Consumers:** {{DOWNSTREAM_CONSUMERS}}
+- **Trust Boundaries:** {{TRUST_BOUNDARIES}}
 
-### [cite_start]Generation Process [cite: 1288]
-* [cite_start]**Architectural Optimizations:** {{ARCH_OPTIMIZATIONS}} [cite: 1289]
-  * [cite_start]{{OPTIMIZATION_1}} [cite: 1290]
-  * [cite_start]{{OPTIMIZATION_2}} [cite: 1291]
-* [cite_start]**Throughput Metrics:** {{THROUGHPUT_METRICS}} [cite: 1292]
-* [cite_start]**Retrieval & Transparency:** {{RETRIEVAL_NOTES}} [cite: 1293]
+## Model Development and Training
 
-### [cite_start]Handling Topics and Generalization [cite: 1294]
-[cite_start]{{GENERALIZATION_NOTES}} [cite: 1295]
-* [cite_start]**Limitations:** {{LIMITATIONS}} [cite: 1296]
+### Data Sources and Provenance
 
-## [cite_start]Model Performance & Output [cite: 1297]
+- **Public or Licensed Data:** {{PUBLIC_OR_LICENSED_DATA}}
+- **Synthetic Data:** {{SYNTHETIC_DATA}}
+- **Proprietary or Internal Data:** {{INTERNAL_DATA}}
+- **Regulated or Personal Data:** {{REGULATED_DATA}}
+- **Provenance and Consent:** {{DATA_PROVENANCE}}
+- **Retention and Deletion:** {{DATA_RETENTION}}
 
-### [cite_start]Latency/Accuracy: [cite: 1297]
-* [cite_start]{{LATENCY_DETAILS}} [cite: 1298]
-* [cite_start]{{ACCURACY_DETAILS}} [cite: 1299]
+### Training and Fine-Tuning
 
-### [cite_start]Handling Sensitive Queries [cite: 1300]
-[cite_start]{{SENSITIVE_QUERY_HANDLING}} [cite: 1301]
+- **Method:** {{TRAINING_METHOD}}
+- **Volume:** {{TRAINING_VOLUME}}
+- **Compute and Location:** {{TRAINING_COMPUTE}}
+- **Fine-Tuning or Adaptation:** {{FINE_TUNING}}
+- **Data Filtering and Deduplication:** {{DATA_FILTERING}}
 
-### [cite_start]Evaluation [cite: 1302]
-* [cite_start]**Human Labeled:** {{HUMAN_EVAL}} [cite: 1303]
-* [cite_start]**AI Judge:** {{AI_JUDGE_EVAL}} [cite: 1303]
+## Model Artifact Integrity
 
-## [cite_start]Infrastructure [cite: 1304]
+- **Artifact Source:** {{ARTIFACT_SOURCE}}
+- **Digest Algorithm:** {{DIGEST_ALGORITHM}}
+- **Expected Digest:** {{MODEL_DIGEST}}
+- **Verification Point:** {{DIGEST_VERIFICATION_POINT}}
+- **Signing or Attestation:** {{SIGNING_OR_ATTESTATION}}
 
-### [cite_start]Training and Evaluation (Dev Environment) [cite: 1305]
-* [cite_start]**Hardware:** {{TRAIN_HARDWARE}} [cite: 1306]
-* [cite_start]**Software:** {{TRAIN_SOFTWARE}} [cite: 1306]
+Document how the deployment pipeline verifies the artifact before loading it. A published digest is not an attestation unless its origin and verification path are trusted.
 
-### [cite_start]Development and Fine Tuning [cite: 1307]
+## Model Behavior and Limits
 
-### [cite_start]Inference Hosting Environment (Production Environment) [cite: 1308]
-* [cite_start]**Provider:** {{INFERENCE_PROVIDER}} [cite: 1309]
-* [cite_start]**Hardware:** {{INFERENCE_HARDWARE}} [cite: 1309]
-* [cite_start]**Software Dependencies:** {{DEPENDENCIES URL}} [cite: 1309]
-* [cite_start]**Endpoint Convention:** {{ENDPOINT_CONVENTION}} [cite: 1309]
-* [cite_start]**Security Context / Rollout Safeguards:** {{SECURITY_CONTEXT}} [cite: 1309]
+### Operational Limits
 
-## [cite_start]Security Controls [cite: 1310]
+- **Maximum Input:** {{MAXIMUM_INPUT}}
+- **Maximum Output:** {{MAXIMUM_OUTPUT}}
+- **Batch and Concurrency Limits:** {{BATCH_AND_CONCURRENCY_LIMITS}}
+- **Timeouts:** {{TIMEOUTS}}
+- **Parameter Validation:** {{PARAMETER_VALIDATION}}
+- **Failure Behavior:** {{FAILURE_BEHAVIOR}}
 
-### [cite_start]Security Testing [cite: 1311]
-* [cite_start]**Safety Datasets:** {{SAFETY_DATASETS}} [cite: 1312]
-* [cite_start]**Adversarial Training / Testing:** [cite: 1313]
-  * [cite_start]{{ATTACK_1_NAME}}: {{ATTACK_1_DESCRIPTION}} Result: {{ATTACK_1_RESULT}} [cite: 1314]
-  * [cite_start]{{ATTACK_2_NAME}}: {{ATTACK_2_DESCRIPTION}} Result: {{ATTACK_2_RESULT}} [cite: 1315]
+### Performance and Quality
 
-## [cite_start]Questions [cite: 1316]
+- **Latency:** {{LATENCY_DETAILS}}
+- **Quality or Accuracy:** {{QUALITY_DETAILS}}
+- **Evaluation Coverage:** {{EVALUATION_COVERAGE}}
+- **Known Limitations:** {{LIMITATIONS}}
 
-### [cite_start]Documentation & Use Cases [cite: 1317]
-* [cite_start]**Q:** {{QUESTION_DOC_1}} [cite: 1318]
-* [cite_start]**A:** {{ANSWER_DOC_1}} [cite: 1319]
+## Infrastructure and Deployment
 
-### [cite_start]Product & Model Specifications [cite: 1320]
-* [cite_start]**Q:** {{QUESTION_PRODUCT_1}} [cite: 1321]
-* [cite_start]**A:** {{ANSWER_PRODUCT_1}} [cite: 1322]
+### Training and Evaluation Environment
 
-### [cite_start]Performance & Evaluation [cite: 1323]
-* [cite_start]**Q:** {{QUESTION_PERF_1}} [cite: 1324]
-* [cite_start]**A:** {{ANSWER_PERF_1}} [cite: 1325]
+- **Provider or Location:** {{TRAINING_LOCATION}}
+- **Hardware:** {{TRAINING_HARDWARE}}
+- **Software:** {{TRAINING_SOFTWARE}}
+- **Security Controls:** {{TRAINING_SECURITY_CONTROLS}}
 
-### [cite_start]Infrastructure & Deployment [cite: 1326]
-* [cite_start]**Q:** {{QUESTION_INFRA_1}} [cite: 1327]
-* [cite_start]**A:** {{ANSWER_INFRA_1}} [cite: 1328]
+### Inference Environment
 
-## [cite_start]Code Review [cite: 1329]
-**Date:** {{REVIEW_DATE}} | **Reviewer:** {{REVIEWER_NAME}} | [cite_start]**Scope:** {{CODE_SCOPE}} [cite: 1330]
+- **Provider or Location:** {{INFERENCE_LOCATION}}
+- **Hardware:** {{INFERENCE_HARDWARE}}
+- **Software Dependencies:** {{DEPENDENCIES}}
+- **Endpoint or Interface:** {{ENDPOINT_CONVENTION}}
+- **Authentication and Authorization:** {{AUTH_CONTROLS}}
+- **Encryption:** {{ENCRYPTION_CONTROLS}}
+- **Tenant Isolation:** {{TENANT_ISOLATION}}
+- **Network Exposure and Egress:** {{NETWORK_CONTROLS}}
+- **Monitoring and Logging:** {{MONITORING_AND_LOGGING}}
+- **Rollout, Rollback, and Kill Switches:** {{ROLLOUT_SAFEGUARDS}}
 
-### [cite_start]Advisory 1 - {{ADVISORY_1_TITLE}} [cite: 1331]
-* [cite_start]**Severity:** {{ADVISORY_1_SEVERITY}} [cite: 1332]
-* [cite_start]**Status:** {{ADVISORY_1_STATUS}} [cite: 1333]
-* [cite_start]**Owner:** {{ADVISORY_1_OWNER}} [cite: 1334]
+## Security Testing
 
-#### [cite_start]Impact [cite: 1335]
-[cite_start]{{ADVISORY_1_IMPACT}} [cite: 1336]
+- **Threat Model:** {{THREAT_MODEL}}
+- **Abuse and Misuse Testing:** {{ABUSE_TESTING}}
+- **Adversarial Robustness Testing:** {{ADVERSARIAL_TESTING}}
+- **Privacy Testing:** {{PRIVACY_TESTING}}
+- **Prompt Injection and Tool-Use Testing:** {{AGENTIC_TESTING}}
+- **Safety Evaluations:** {{SAFETY_EVALUATIONS}}
+- **Dynamic or Fuzz Testing:** {{DYNAMIC_TESTING}}
+- **Known Gaps:** {{TESTING_GAPS}}
 
-#### [cite_start]Attack Preconditions [cite: 1337]
-* [cite_start]{{ADVISORY_1_PRECONDITION_1}} [cite: 1338]
-* [cite_start]{{ADVISORY_1_PRECONDITION_2}} [cite: 1339]
+## Questions and Unknowns
 
-#### [cite_start]Evidence [cite: 1340]
-* [cite_start]{{ADVISORY_1_EVIDENCE_1}} [cite: 1341]
-* [cite_start]{{ADVISORY_1_EVIDENCE_2}} [cite: 1342]
+### Documentation and Use Cases
 
-#### [cite_start]Recommended Remediation [cite: 1343]
-1. [cite_start]{{ADVISORY_1_REMEDIATION_1}} [cite: 1344]
-2. [cite_start]{{ADVISORY_1_REMEDIATION_2}} [cite: 1345]
+- **Q:** {{QUESTION_DOCUMENTATION_1}}
+- **A or Status:** {{ANSWER_DOCUMENTATION_1}}
 
-#### [cite_start]Verification [cite: 1346]
-* [cite_start]{{ADVISORY_1_VERIFICATION_1}} [cite: 1347]
-* [cite_start]{{ADVISORY_1_VERIFICATION_2}} [cite: 1348]
+### Product and Model Specifications
+
+- **Q:** {{QUESTION_PRODUCT_1}}
+- **A or Status:** {{ANSWER_PRODUCT_1}}
+
+### Performance and Evaluation
+
+- **Q:** {{QUESTION_PERFORMANCE_1}}
+- **A or Status:** {{ANSWER_PERFORMANCE_1}}
+
+### Infrastructure and Deployment
+
+- **Q:** {{QUESTION_INFRASTRUCTURE_1}}
+- **A or Status:** {{ANSWER_INFRASTRUCTURE_1}}
+
+## Accepted Risks and Decision
+
+- **Decision:** {{DECISION}}
+- **Decision Owner:** {{DECISION_OWNER}}
+- **Accepted Risks:** {{ACCEPTED_RISKS}}
+- **Conditions or Expiration:** {{ACCEPTANCE_CONDITIONS}}
+- **Follow-up Owners and Dates:** {{FOLLOW_UPS}}
+
+## Code Review
+
+**Date:** {{REVIEW_DATE}}  
+**Reviewer:** {{REVIEWER_NAMES}}  
+**Scope:** {{CODE_SCOPE}}
+
+### Advisory 1 - {{ADVISORY_1_TITLE}}
+
+- **Severity:** {{ADVISORY_1_SEVERITY}}
+- **Confidence:** {{ADVISORY_1_CONFIDENCE}}
+- **Status:** {{ADVISORY_1_STATUS}}
+- **Owner:** {{ADVISORY_1_OWNER}}
+
+#### Impact
+
+{{ADVISORY_1_IMPACT}}
+
+#### Attack Preconditions and Trust Boundary
+
+- {{ADVISORY_1_PRECONDITION_1}}
+- {{ADVISORY_1_PRECONDITION_2}}
+
+#### Evidence and Data Flow
+
+- {{ADVISORY_1_EVIDENCE_1}}
+- {{ADVISORY_1_EVIDENCE_2}}
+
+#### Exploitability and False-Positive Considerations
+
+{{ADVISORY_1_EXPLOITABILITY}}
+
+#### Recommended Remediation
+
+1. {{ADVISORY_1_REMEDIATION_1}}
+2. {{ADVISORY_1_REMEDIATION_2}}
+
+#### Verification
+
+- {{ADVISORY_1_VERIFICATION_1}}
+- {{ADVISORY_1_VERIFICATION_2}}
+
+#### Open Questions
+
+- {{ADVISORY_1_OPEN_QUESTION_1}}
