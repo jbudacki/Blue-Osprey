@@ -1,0 +1,58 @@
+{
+  "mode": "finding-first",
+  "sourceTitle": "Synthetic security review",
+  "validationBoundary": "Repository evidence was mapped. No production systems were queried and no operational logs were supplied.",
+  "rows": [
+    {
+      "id": "SR-04-A",
+      "sourceIds": ["SR-04"],
+      "action": "Enforce server-side authentication and object authorization on the document route and add negative authorization tests.",
+      "whereToPoint": [
+        {"type": "review", "ref": "synthetic-security-review.md#sr-04"},
+        {"type": "repo", "ref": "src/routes/documents.ts:42"},
+        {"type": "test", "ref": "tests/documents-auth.test.ts"}
+      ],
+      "evidenceShown": "The route calls the document controller without authentication middleware, and the test file contains no negative authorization case.",
+      "sourceToSinkImpact": {
+        "kind": "technical",
+        "source": "Anonymous request containing a document identifier",
+        "sink": "Document store read or write",
+        "preconditions": ["The route is externally reachable"],
+        "impact": "Unauthorized document access or modification"
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["API gateway", "application authorization logs"],
+        "events": ["Requests to the document route with anonymous or mismatched identity"],
+        "correlationFields": ["timestamp", "principal", "source address", "document ID", "response status", "request ID"],
+        "confirmationCriteria": "Successful responses for anonymous requests or principals that do not own the requested document would corroborate abuse of the control gap."
+      },
+      "operationalEvidence": [],
+      "status": "Confirmed in source — operationally unverified — open"
+    },
+    {
+      "id": "SR-04-B",
+      "sourceIds": ["SR-04"],
+      "action": "Add alerting for successful anonymous or identity-mismatched document access and retain the correlation fields needed for investigation.",
+      "whereToPoint": [
+        {"type": "review", "ref": "synthetic-security-review.md#sr-04"},
+        {"type": "repo", "ref": "src/routes/documents.ts:42"}
+      ],
+      "evidenceShown": "The reviewed route lacks the server-side control whose denial events would normally support detection, and the review supplies no operational telemetry.",
+      "sourceToSinkImpact": {
+        "kind": "technical",
+        "source": "Anonymous or identity-mismatched document request",
+        "sink": "Unalerted access to the document store",
+        "preconditions": ["The route is deployed", "Relevant identity and object fields are available to logging"],
+        "impact": "Delayed detection and incomplete investigation of unauthorized access"
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["API gateway", "application logs", "identity provider"],
+        "events": ["Successful document responses without an authenticated owner match"],
+        "correlationFields": ["timestamp", "principal", "source address", "document ID", "response status", "request ID"],
+        "confirmationCriteria": "A successful document response without a matching authenticated owner would support an alert; absent identity or object fields would confirm a telemetry gap."
+      },
+      "operationalEvidence": [],
+      "status": "Confirmed in source — operationally unverified — open"
+    }
+  ]
+}

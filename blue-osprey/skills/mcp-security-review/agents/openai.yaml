@@ -1,0 +1,4 @@
+interface:
+  display_name: "MCP Security Review"
+  short_description: "Review MCP connections using security guidance"
+  default_prompt: "Use $mcp-security-review to assess this MCP request and produce the checklist and security decision."

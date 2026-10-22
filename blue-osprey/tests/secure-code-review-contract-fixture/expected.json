@@ -1,0 +1,28 @@
+{
+  "confirmed-command-injection": {
+    "disposition": "Block",
+    "findingCount": 1,
+    "severity": "High",
+    "confidence": "High",
+    "requiredEvidence": [
+      "confirmed-command-injection/app.js:5",
+      "req.query.name",
+      "execFile",
+      "shell command"
+    ]
+  },
+  "no-finding": {
+    "disposition": "Approve",
+    "findingCount": 0
+  },
+  "unconfirmed-scanner-hit": {
+    "disposition": "Non-blocking",
+    "findingCount": 0,
+    "requiredEvidence": ["internal constant", "no request reaches it"]
+  },
+  "missing-context": {
+    "disposition": "Discuss",
+    "findingCount": 0,
+    "requiredEvidence": ["destination", "reachability", "open questions"]
+  }
+}

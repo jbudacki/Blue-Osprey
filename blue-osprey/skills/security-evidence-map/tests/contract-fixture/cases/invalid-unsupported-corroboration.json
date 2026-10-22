@@ -1,0 +1,29 @@
+{
+  "mode": "finding-first",
+  "sourceTitle": "Invalid unsupported corroboration",
+  "validationBoundary": "Only repository evidence was supplied.",
+  "rows": [
+    {
+      "id": "SR-04-A",
+      "sourceIds": ["SR-04"],
+      "action": "Enforce authorization.",
+      "whereToPoint": [{"type": "repo", "ref": "src/routes/documents.ts:42"}],
+      "evidenceShown": "The route lacks authorization middleware.",
+      "sourceToSinkImpact": {
+        "kind": "technical",
+        "source": "Anonymous request",
+        "sink": "Document store",
+        "preconditions": ["External reachability"],
+        "impact": "Unauthorized access"
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["API gateway"],
+        "events": ["Successful anonymous requests"],
+        "correlationFields": ["timestamp", "principal", "response status"],
+        "confirmationCriteria": "A successful anonymous response would corroborate abuse."
+      },
+      "operationalEvidence": [],
+      "status": "Confirmed in source — SOC corroborated — open"
+    }
+  ]
+}

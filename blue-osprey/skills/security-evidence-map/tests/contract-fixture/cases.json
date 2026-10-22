@@ -1,0 +1,42 @@
+{
+  "cases": [
+    {
+      "name": "finding-first-split-actions",
+      "map": "cases/finding-first-map.json",
+      "valid": true,
+      "minRows": 2,
+      "requiresSplitSourceId": true,
+      "requiredStatuses": [
+        "Confirmed in source — operationally unverified — open"
+      ]
+    },
+    {
+      "name": "action-first-cross-cutting",
+      "map": "cases/action-first-map.json",
+      "valid": true,
+      "minRows": 1,
+      "requiresCrossCuttingRow": true,
+      "requiredStatuses": [
+        "Evidence gap confirmed — action open"
+      ]
+    },
+    {
+      "name": "reject-unsupported-soc-corroboration",
+      "map": "cases/invalid-unsupported-corroboration.json",
+      "valid": false,
+      "minRows": 1
+    },
+    {
+      "name": "reject-uncontrolled-status",
+      "map": "cases/invalid-uncontrolled-status.json",
+      "valid": false,
+      "minRows": 1
+    },
+    {
+      "name": "reject-untraceable-row",
+      "map": "cases/invalid-untraceable-row.json",
+      "valid": false,
+      "minRows": 1
+    }
+  ]
+}

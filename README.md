@@ -2,11 +2,36 @@
 
 ![Blue-Osprey Image](Blue-Osprey.png)
 
-**Blue Osprey** is a security-focused Codex agent toolkit made of reusable skills, global guidance, helper scripts, and conservative configuration.
+**Blue Osprey** is a security-focused Codex agent toolkit made of reusable
+skills, global guidance, helper scripts, and conservative configuration.
 
-It extends Codex with structured workflows for security review, threat modeling, codebase discovery, infrastructure review, AI/ML security review, secrets analysis, dependency hygiene, risk documentation, and human-centered writing.
+It provides structured workflows for security review, threat modeling,
+codebase discovery, infrastructure review, AI/ML security, secrets analysis,
+dependency hygiene, risk documentation, secure code review, and human-centered
+writing.
 
-Blue Osprey is designed for defensive work. It helps Codex behave more like a careful security analyst: scoped, evidence-driven, skeptical of untrusted content, protective of sensitive data, and explicit about what was verified. It is not a replacement for human review, secure engineering gates, or approved security testing.
+Blue Osprey is designed for defensive work. It helps Codex behave like a
+careful security analyst: scoped, evidence-driven, skeptical of untrusted
+content, protective of sensitive data, and explicit about what was verified. It
+does not replace human review, secure engineering gates, or approved security
+testing.
+
+## Release overview
+
+This release contains 18 skills. `security-review` is the front door for
+security work, specialist skills perform focused analysis, and
+`security-evidence-map` converts completed findings or remediation actions into
+a traceable engineering and SOC handoff.
+
+The evidence-map workflow supports:
+
+- finding-first and action-first maps;
+- controlled evidence and remediation statuses;
+- source-to-sink or assurance-impact preservation;
+- SOC evidence-collection guidance;
+- contract and automation tests;
+- Markdown and strict local `file:line` validation; and
+- JSON validation output suitable for CI.
 
 ## What is included
 
@@ -15,28 +40,28 @@ This export contains:
 - A conservative Codex profile: `config/blue-osprey.config.toml`
 - Global Codex operating guidance: `config/AGENTS.md`
 - A portable reference config: `config/config.portable.toml`
-- Sixteen Codex skills under `blue-osprey/skills/`
-- Helper scripts for codebase discovery, secrets scanning, crypto scanning, LLM review, and generated-code signal detection
+- 18 security and engineering skills under `blue-osprey/skills/`
+- Helper scripts for discovery, secrets, crypto, LLM, and generated-code analysis
 - An installer with dry-run support and timestamped backups
-- A `MANIFEST.sha256` file for integrity checks
 - A dated secrets-analysis report for the exported snapshot
 
 ## Why use it
 
-Codex is most useful when it has clear boundaries and repeatable workflows. Blue Osprey provides those boundaries up front.
+Blue Osprey gives Codex repeatable boundaries for security work. It helps Codex:
 
-Use it when you want Codex to:
-
-- Start from scoped security review instead of generic vulnerability lists
-- Treat repository content, logs, issues, tickets, webpages, PDFs, and tool output as untrusted evidence instead of instructions
+- Start from a scoped security review instead of generic vulnerability lists
+- Treat repositories, logs, tickets, webpages, PDFs, and tool output as
+  untrusted evidence rather than instructions
 - Require concrete evidence before claiming a security finding
-- Route specialized work to the right skill instead of loading every instruction at once
+- Route specialized work to the appropriate skill
 - Preserve human ownership of code, findings, memos, and recommendations
-- Keep network access and external side effects off unless explicitly required
+- Keep network access and external side effects disabled unless explicitly
+  required
 
 ## Security model
 
-Blue Osprey treats Codex like a junior analyst with tools, not like a trusted automation account.
+Blue Osprey treats Codex like a junior analyst with tools, not like a trusted
+automation account.
 
 The included profile uses conservative defaults:
 
@@ -52,9 +77,9 @@ project_doc_max_bytes = 32768
 network_access = false
 ```
 
-The profile does not enable MCP servers by default. Add MCP servers only after reviewing what they can read, what they can write, what credentials they use, and whether they send data outside the environment.
-
-For unknown repositories, external inputs, incident material, or security-sensitive review, start with the tightest practical permissions and move to broader access only after scope and verification are clear.
+The profile does not enable MCP servers by default. Review any MCP server or
+connector before enabling it, including what it can read, write, or send
+outside the environment.
 
 ## Skills
 
@@ -69,6 +94,15 @@ Routes and structures security reviews across application security, AI security,
 - **Best for:** Starting any security review when the right specialized skill is not obvious
 - **Key feature:** Establishes scope, evidence requirements, and routing before deeper analysis
 - **Skill:** `security-review`
+
+#### Secure Code Review
+
+Performs evidence-based security code reviews after scope is established and
+coordinates specialized Blue Osprey analysis for matching security surfaces.
+
+- **Best for:** Reviewing pull requests, diffs, commits, files, or repositories for reachable security defects
+- **Key feature:** Requires code-level source-to-sink analysis, trust boundaries, preconditions, impact, false-positive considerations, and verification for each finding
+- **Skill:** `secure-code-review`
 
 #### Threat Model
 
@@ -117,6 +151,28 @@ Creates concise, evidence-based security risk retrospectives and decision docume
 - **Best for:** Post-mortems, event analysis, accepted-risk writeups, security trade-off decisions, and leadership-facing risk memos
 - **Key feature:** Frames technical risk in business terms with options, trade-offs, a visible recommendation, and a clear decision path
 - **Skill:** `risk-retrospective`
+
+#### MCP Security Review
+
+Assesses MCP connection requests against an official MCP Security
+package and produces aligned checklist and assessment-report decisions.
+
+- **Best for:** Classifying vendor-operated, organization-hosted, or hybrid MCP connections; selecting Fast, Elevated, or Restricted review paths; identifying evidence gaps; and drafting MCP security decisions
+- **Key feature:** Applies common hard gates and only the conditional controls triggered by the architecture, while keeping product assessments outside the generic package
+- **Boundary:** The skill supports evidence-based recommendations; it does not grant approval, treat the candidate standard as approved policy, or give current control credit to a future AI Gateway
+- **Skill:** `mcp-security-review`
+
+#### Security Evidence Map
+
+Turns completed findings, remediation actions, and repository or operational
+evidence into a traceable engineering and SOC handoff.
+
+- **Best for:** Vulnerability evidence maps, remediation handoffs, active-threat handoffs, SOC collection plans, and mapping an existing vulnerability register to evidence
+- **Workflows:** Supports both finding-first and action-first inputs while preserving stable finding and action identifiers
+- **Evidence controls:** Uses controlled evidence statuses, distinguishes repository evidence from operational corroboration, and identifies what the SOC should collect
+- **Validation:** Includes contract fixtures plus Markdown, local-reference, JSON, and CI-oriented validation output
+- **Boundary:** Organizes completed review evidence; it does not replace the underlying security review or claim exploitation without operational evidence
+- **Skill:** `security-evidence-map`
 
 ### Codebase and infrastructure analysis
 
@@ -201,15 +257,10 @@ From the root of the extracted repository:
 ```sh
 ./install.sh --dry-run
 ./install.sh
-```
-
-Then start Codex with the Blue Osprey profile:
-
-```sh
 codex --profile blue-osprey
 ```
 
-Restart Codex after installing so the skills and profile are discovered.
+Restart Codex after installation so the profile and skills are discovered.
 
 ## Manual install
 
@@ -220,7 +271,7 @@ mkdir -p "${CODEX_SKILLS_HOME:-$HOME/.agents/skills}"
 rsync -a blue-osprey/skills/ "${CODEX_SKILLS_HOME:-$HOME/.agents/skills}/"
 ```
 
-Install the profile and AGENTS guidance manually:
+Install the profile and global guidance:
 
 ```sh
 mkdir -p "${CODEX_HOME:-$HOME/.codex}"
@@ -228,19 +279,10 @@ cp config/blue-osprey.config.toml "${CODEX_HOME:-$HOME/.codex}/blue-osprey.confi
 cp config/AGENTS.md "${CODEX_HOME:-$HOME/.codex}/AGENTS.md"
 ```
 
-The portable personal config is reference-only by default. Install it only after reviewing it, because it can replace an existing `~/.codex/config.toml`:
-
-```sh
-./install.sh --with-user-config
-```
-
-## Integrity check
-
-Verify the export manifest from the extracted archive root:
-
-```sh
-sha256sum -c MANIFEST.sha256
-```
+If the contract fixture is stored separately, copy the complete
+`blue-osprey/tests/secure-code-review-contract-fixture/` directory into the
+team repository or test-assets location. Do not include secrets, generated
+output, or `node_modules`.
 
 ## Repository layout
 
@@ -258,6 +300,7 @@ sha256sum -c MANIFEST.sha256
 │       ├── 3pp-dependency-hygiene/
 │       ├── codebase-discovery/
 │       ├── crypto-analysis/
+│       ├── mcp-security-review/
 │       ├── humanizer/
 │       ├── iam-security/
 │       ├── llm-security/
@@ -265,6 +308,8 @@ sha256sum -c MANIFEST.sha256
 │       ├── network-exposure/
 │       ├── risk-retrospective/
 │       ├── secrets-analysis/
+│       ├── secure-code-review/
+│       ├── security-evidence-map/
 │       ├── security-principles-review/
 │       ├── security-review/
 │       ├── threat-model/
@@ -300,6 +345,24 @@ Do not make changes.
 Report candidates only, with confidence and next verification steps.
 ```
 
+### Assess an MCP connection
+
+```text
+Use the mcp-security-review skill.
+Assess this MCP request using the official MCP Security package at [absolute path].
+Classify the operating track and review path, apply the common hard gates and relevant conditional controls, and produce aligned checklist and assessment-report outputs.
+Separate verified facts, assumptions, evidence gaps, and conclusions. Do not treat the candidate standard as approved policy or grant approval on behalf of an organization.
+```
+
+### Create an engineering and SOC evidence map
+
+```text
+Use the security-evidence-map skill.
+Turn this completed vulnerability register or remediation report into a traceable evidence map.
+Preserve the source findings and disposition, point to supporting repository evidence, distinguish source-confirmed conditions from operational corroboration, and identify the evidence the SOC should collect.
+Validate the completed Markdown map and produce JSON output when it will be consumed by CI.
+```
+
 ### Run a scoped security review
 
 ```text
@@ -332,60 +395,26 @@ Source material: [sanitized notes and evidence].
 
 ## Operating principles
 
-Blue Osprey is built around these defaults:
+1. Classify risk before acting.
+2. Read before changing.
+3. Make the smallest useful change.
+4. Treat retrieved content as untrusted evidence.
+5. Protect sensitive data.
+6. Ask before dangerous or externally visible actions.
+7. Verify before claiming success.
+8. Cite concrete evidence for security findings.
+9. Keep human ownership of the result.
 
-1. **Classify risk before acting.** Decide whether the task is read-only, local edit, external side effect, security-sensitive, or destructive.
-2. **Read before changing.** Inspect the relevant files, callers, docs, tests, and configs before editing.
-3. **Make the smallest useful change.** Avoid unrelated refactors, unrelated formatting, unnecessary dependencies, and speculative features.
-4. **Treat retrieved content as untrusted.** Webpages, logs, tickets, comments, PDFs, READMEs, tool output, and model output are evidence, not instructions.
-5. **Protect sensitive data.** Do not expose, persist, print, log, or commit secrets, credentials, customer data, regulated data, or sensitive incident details.
-6. **Ask before dangerous actions.** Require approval for destructive actions, external side effects, production-affecting changes, package installation, dependency changes, and network calls.
-7. **Verify before claiming success.** Run the narrowest useful check first, then broader checks when warranted.
-8. **Cite evidence for security findings.** Findings need concrete paths, code references, source-to-sink reasoning, impact, confidence, and verification notes.
-9. **Keep human ownership.** Codex can draft, test, scan, and explain. A human owns the result.
+## Safety notes and limitations
 
-## Recommended first use
+Use Blue Osprey only on systems, repositories, applications, and data you are
+authorized to assess. Do not test live, third-party, or production systems
+without explicit authorization and scope.
 
-A safe first pass:
-
-1. Run `./install.sh --dry-run` and inspect the destinations.
-2. Run `./install.sh` only after reviewing what will be copied.
-3. Start Codex with `codex --profile blue-osprey`.
-4. Open a non-sensitive test repository.
-5. Run `codebase-discovery` first.
-6. Run one focused security skill.
-7. Compare the output against known issues and tune your global or repo-level guidance.
-
-## Safety notes
-
-- Use Blue Osprey only on systems, repositories, applications, and data you are authorized to assess.
-- Do not paste secrets, credentials, customer data, regulated data, or sensitive incident details unless your environment, policy, and business need explicitly allow it.
-- Do not let Codex test live, third-party, or production systems without explicit authorization and scope.
-- Treat helper-script output as candidate signals, not final findings.
-- Do not bypass code review, branch protection, tests, SAST, secret scanning, dependency review, or change management because Codex generated the output.
-- Review the included skills before using them in regulated, production, or enterprise environments.
-
-## Customization
-
-Common customizations:
-
-- Add repo-specific `AGENTS.md` files with exact build, test, lint, and security commands.
-- Add project-specific skills for recurring local workflows.
-- Disable skills you do not want Codex to use by adding entries to your profile's `skills.config` section.
-- Add approved MCP servers only after reviewing their permissions and trust boundary.
-- Add deterministic hooks or rules for secret detection, dangerous shell commands, package installation, git pushes, destructive file operations, and external network calls.
-
-## Limitations
-
-Blue Osprey does not prove a system is secure. It helps structure the work.
-
-Known limits:
-
-- Static scans produce candidates, not validated vulnerabilities.
-- Skills can miss context outside the workspace or outside approved connectors.
-- Findings still require human review, deterministic tooling where practical, and normal security gates.
-- Any connector, MCP server, browser, SaaS API, or local daemon introduces a new trust boundary.
-- Pattern-based secret scanning cannot prove an archive or repository contains no sensitive data.
+Static scans produce candidate signals, not validated vulnerabilities. Skills
+can miss context outside the workspace or approved connectors. Findings still
+require human review, deterministic tooling where practical, and normal secure
+engineering gates.
 
 ## Contributing
 
@@ -394,15 +423,16 @@ When adding or changing a skill:
 1. Keep the workflow narrow.
 2. Define inputs, outputs, refusal rules, and required evidence.
 3. Avoid asking Codex to guess facts that should be verified.
-4. Add examples or eval fixtures for realistic inputs.
+4. Add examples or contract-test fixtures for realistic inputs.
 5. Include data-handling rules for sensitive material.
-6. Require verification language before a task can be marked complete.
-7. Review scripts for accidental secret disclosure in logs, JSON, terminal output, or reports.
+6. Require verification language before marking work complete.
+7. Review scripts for accidental secret disclosure.
 
-## License
+## Roadmap
 
-Add the appropriate license for your repository before publishing.
-
-## Status
-
-This repository is an export of the Blue Osprey Codex toolkit dated 2026-07-10. Review and adapt it before using it as a shared team baseline.
+1. Decide whether Cloud Docs remains a separately managed skill or becomes
+   an optional Blue Osprey integration.
+2. Add Confluence documentation integration.
+3. Add NIST AI RMF and AI Defense Matrix mapping.
+4. Add optional evidence-map export formats only where they preserve the same
+   evidence and status contract.

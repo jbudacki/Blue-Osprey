@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secure Code Review"
+  short_description: "Evidence-based security review for code changes"
+  default_prompt: "Use $secure-code-review to review this code change for evidence-backed security risks."

@@ -1,0 +1,29 @@
+{
+  "mode": "action-first",
+  "sourceTitle": "Invalid untraceable row",
+  "validationBoundary": "The source report was summarized.",
+  "rows": [
+    {
+      "id": "EM-001",
+      "sourceIds": ["BO-01"],
+      "action": "Apply the recommended control.",
+      "whereToPoint": [],
+      "evidenceShown": "A control gap was reported.",
+      "sourceToSinkImpact": {
+        "kind": "technical",
+        "source": "External request",
+        "sink": "Sensitive service",
+        "preconditions": ["Service is reachable"],
+        "impact": "Unauthorized access"
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["API gateway"],
+        "events": ["Successful requests"],
+        "correlationFields": ["timestamp", "principal"],
+        "confirmationCriteria": "Successful unauthorized requests would corroborate abuse."
+      },
+      "operationalEvidence": [],
+      "status": "Conditionally reachable — evidence needed"
+    }
+  ]
+}

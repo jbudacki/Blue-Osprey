@@ -15,9 +15,8 @@ python3 "$SKILL_DIR/scripts/llm_scan.py" --help
 ```
 
 Heuristic reconnaissance for codebases integrating Large Language Models. It
-identifies candidate review surfaces for prompt injection, improper output
-handling, excessive agency, secrets, and configuration risk. A match is not a
-confirmed vulnerability.
+identifies candidate review surfaces aligned to the OWASP Top 10 for LLM
+Applications 2026 taxonomy. A match is not a confirmed vulnerability.
 
 ## Quick Start
 
@@ -64,9 +63,12 @@ Identify LLM integration points and understand the application architecture.
 
 ---
 
-### Phase 2: Secrets & API Keys (LLM02)
+### Phase 2: Sensitive Information Disclosure (LLM02:2026)
 
-Detect hardcoded API keys and insecure credential management.
+Review whether confidential, regulated, privileged, or proprietary data can be
+exposed through answers, tool arguments, retrieved chunks, reasoning traces,
+logs, telemetry, embeddings, or observable inference properties. Use the
+secrets specialist for credential-specific detection.
 
 - [ ] Run secrets scan
   ```bash
@@ -75,7 +77,7 @@ Detect hardcoded API keys and insecure credential management.
 
 ---
 
-### Phase 3: Prompt Injection (LLM01)
+### Phase 3: Prompt Injection (LLM01:2026)
 
 Identify prompt injection attack vectors - the #1 vulnerability for LLM applications.
 
@@ -91,9 +93,11 @@ Identify prompt injection attack vectors - the #1 vulnerability for LLM applicat
 
 ---
 
-### Phase 4: Output & Agency (LLM05/LLM06)
+### Phase 4: Excessive Agency & Improper Output Handling (LLM03:2026 / LLM10:2026)
 
-Detect improper output handling and excessive LLM permissions.
+Review excessive functionality, permissions, and autonomy separately from
+unsafe model-output handling. Trace model output to tools, shells, APIs,
+queries, paths, markup, and other downstream sinks.
 
 - [ ] Run output handling scan
   ```bash
@@ -107,9 +111,10 @@ Detect improper output handling and excessive LLM permissions.
 
 ---
 
-### Phase 5: Configuration & Resources (LLM09/LLM10)
+### Phase 5: Unbounded Consumption (LLM06:2026)
 
-Review LLM configuration and resource management.
+Review token, context, reasoning, request-rate, concurrency, tool-loop, and
+cost controls, including spending caps and circuit breakers.
 
 - [ ] Run configuration scan
   ```bash
@@ -118,14 +123,36 @@ Review LLM configuration and resource management.
 
 ---
 
-### Phase 6: RAG & Supply Chain (LLM08/LLM04)
+### Phase 6: Supply Chain, Poisoning, and Retrieval (LLM04:2026 / LLM05:2026 / LLM09:2026)
 
-Assess RAG implementations and model provenance.
+Assess third-party model, adapter, dataset, package, serialization, conversion,
+and deployment provenance; poisoning of training, fine-tuning, embedding, or
+RAG data; and vector/embedding risks such as inversion, retrieval poisoning,
+jamming, membership inference, and semantic-cache abuse.
 
 - [ ] Identify RAG/vector database usage
   ```bash
   rg -n "vector|embedding|rag|chroma|pinecone|weaviate|faiss" -g "*.py" -g "*.js" . | head -15
   ```
+
+### Phase 7: Misinformation & Hidden Context Exposure (LLM07:2026 / LLM08:2026)
+
+Review whether incorrect, incomplete, unsupported, or misleading output can
+drive human decisions, automated workflows, or agent actions. Also review
+exposure of system prompts, tool schemas, behavioral control logic, permissions,
+roles, and output-format rules through hidden context.
+
+### Taxonomy boundary
+
+This skill uses the 2026 list for the LLM-as-application-component boundary.
+When the model acts as an autonomous actor with tools, memory, multi-step
+execution, or persistent state, pair this review with the OWASP Top 10 for
+Agentic Applications and the appropriate Blue-Osprey agentic review workflow.
+
+The attached source used for this update is `OWASP-GenAI-LLM-Top-10-2026-v1.0
+(2).pdf`, labeled “Version 2026” and dated August 4, 2026; its cover states
+that the publication date is still to be set. Treat the taxonomy as a supplied
+reference until its official publication status is confirmed.
 
 ---
 
@@ -156,7 +183,7 @@ Save to: `reports/llm-security-[date].md`
 ## Quick Reference
 
 See [references/reference.md](references/reference.md) for:
-- OWASP Top 10 for LLM Applications (2025) mapping
+- OWASP Top 10 for LLM Applications (2026) mapping
 - Severity classification criteria
 - Detailed red flags by category
 - Remediation recommendations

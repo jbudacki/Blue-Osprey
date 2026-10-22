@@ -1,0 +1,33 @@
+{
+  "mode": "action-first",
+  "sourceTitle": "Synthetic remediation review",
+  "validationBoundary": "The supplied review references and inventory descriptions were mapped. No live asset inventory or ownership system was queried.",
+  "rows": [
+    {
+      "id": "EM-001",
+      "sourceIds": ["BO-01", "BO-03", "POSTURE-02"],
+      "action": "Reconcile cloud inventory, software inventory, source repositories, and the CMDB into an owner-approved register.",
+      "whereToPoint": [
+        {"type": "review", "ref": "security-review.md#bo-01"},
+        {"type": "review", "ref": "security-review.md#bo-03"},
+        {"type": "review", "ref": "posture-review.md#posture-02"},
+        {"type": "artifact", "ref": "named cloud and CMDB inventory exports"}
+      ],
+      "evidenceShown": "Separate artifacts identify assets and components, but none joins stable asset identity to owner, purpose, environment, approval, and retirement state.",
+      "sourceToSinkImpact": {
+        "kind": "governance",
+        "applicability": "not-applicable",
+        "assuranceGap": "Ownership, approval, and lifecycle decisions cannot be traced consistently across inventory sources.",
+        "impact": "Orphaned or conflicting records can prevent accountable remediation and retirement decisions."
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["cloud inventory", "software inventory", "source repository inventory", "CMDB", "ownership register"],
+        "events": ["Current exports and record changes for the review period"],
+        "correlationFields": ["stable asset ID", "repository ID", "environment", "owner", "approval state", "retirement state"],
+        "confirmationCriteria": "Unmatched stable identifiers or conflicting ownership and approval fields would confirm the reconciliation gap."
+      },
+      "operationalEvidence": [],
+      "status": "Evidence gap confirmed — action open"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "mode": "action-first",
+  "sourceTitle": "Invalid uncontrolled status",
+  "validationBoundary": "Source evidence only.",
+  "rows": [
+    {
+      "id": "EM-001",
+      "sourceIds": ["POSTURE-02"],
+      "action": "Create an ownership register.",
+      "whereToPoint": [{"type": "review", "ref": "posture-review.md#posture-02"}],
+      "evidenceShown": "No joined ownership record was supplied.",
+      "sourceToSinkImpact": {
+        "kind": "governance",
+        "applicability": "not-applicable",
+        "assuranceGap": "Asset ownership is not traceable.",
+        "impact": "Remediation decisions may be unassigned."
+      },
+      "socEvidenceToCollect": {
+        "telemetrySources": ["CMDB"],
+        "events": ["Current inventory export"],
+        "correlationFields": ["asset ID", "owner"],
+        "confirmationCriteria": "Missing owners would confirm the gap."
+      },
+      "operationalEvidence": [],
+      "status": "Probably open"
+    }
+  ]
+}

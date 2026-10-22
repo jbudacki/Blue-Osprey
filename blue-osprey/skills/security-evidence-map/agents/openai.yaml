@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Evidence Map"
+  short_description: "Trace findings to actions and SOC evidence"
+  default_prompt: "Use $security-evidence-map to turn this completed review into a traceable engineering and SOC evidence map."
