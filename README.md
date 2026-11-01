@@ -18,7 +18,7 @@ testing.
 
 ## Release overview
 
-This release contains 18 skills. `security-review` is the front door for
+This release contains 20 skills. `security-review` is the front door for
 security work, specialist skills perform focused analysis, and
 `security-evidence-map` converts completed findings or remediation actions into
 a traceable engineering and SOC handoff.
@@ -40,7 +40,7 @@ This export contains:
 - A conservative Codex profile: `config/blue-osprey.config.toml`
 - Global Codex operating guidance: `config/AGENTS.md`
 - A portable reference config: `config/config.portable.toml`
-- 18 security and engineering skills under `blue-osprey/skills/`
+- 20 security and engineering skills under `blue-osprey/skills/`
 - Helper scripts for discovery, secrets, crypto, LLM, and generated-code analysis
 - An installer with dry-run support and timestamped backups
 - A dated secrets-analysis report for the exported snapshot
@@ -106,11 +106,19 @@ coordinates specialized Blue Osprey analysis for matching security surfaces.
 
 #### Threat Model
 
-Routes threat-modeling work to the right framework. Uses STRIDE for traditional systems and MAESTRO for agentic AI, RAG, MCP, tool-using, or multi-agent systems.
+Routes threat-modeling work to STRIDE for conventional systems and `ai-threat-model` for AI/ML, RAG, MCP, tool-using, or multi-agent systems.
 
 - **Best for:** Threat modeling features, architectures, PRDs, design docs, auth flows, AI agent workflows, MCP integrations, and data flows
 - **Key feature:** Separates conventional application threats from AI/agent ecosystem threats when needed
 - **Skill:** `threat-model`
+
+#### AI Threat Model
+
+Traces untrusted content and data to AI decisions and agent actions. Combines relevant STRIDE and MAESTRO analysis with an action-authority ledger and one evidence-based risk register. Uses ATLAS and PLOT4AI selectively, and treats Promptfoo research entries as leads to verify against the local architecture.
+
+- **Best for:** AI/ML pipelines, RAG applications, copilots, tool-using agents, and multi-agent workflows
+- **Key feature:** Separates observed controls, plausible paths, research leads, and unknowns without forcing a finding count
+- **Skill:** `ai-threat-model`
 
 #### Threat Model Generator (STRIDE)
 
@@ -255,8 +263,8 @@ Edits prose to remove common signs of AI-generated writing while preserving mean
 From the root of the extracted repository:
 
 ```sh
-./install.sh --dry-run
-./install.sh
+sh ./install.sh --dry-run
+sh ./install.sh
 codex --profile blue-osprey
 ```
 
@@ -298,6 +306,7 @@ output, or `node_modules`.
 ├── blue-osprey/
 │   └── skills/
 │       ├── 3pp-dependency-hygiene/
+│       ├── ai-threat-model/
 │       ├── codebase-discovery/
 │       ├── crypto-analysis/
 │       ├── mcp-security-review/

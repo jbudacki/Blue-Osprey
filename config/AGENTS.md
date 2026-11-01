@@ -16,7 +16,7 @@ This file is reusable default guidance. Repository AGENTS.md files must supply p
 - Use task-specific skills proactively when the request matches a skill description.
 - For non-trivial work in an unfamiliar repository, use `$codebase-discovery` when the architecture, stack, integrations, or review scope are unclear. Skip it for localized tasks or when repository guidance provides enough context.
 - For security review, use `$security-review` as the router and evidence format, then activate specialized Blue-Osprey skills only as needed.
-- For threat modeling, use `$threat-model` as the router, `$threat-model-generator-stride` for general systems, and `$threat-model-generator-maestro` for agentic AI, RAG, MCP, tool-using, or multi-agent systems.
+- For threat modeling, use `$threat-model` as the router, `$threat-model-generator-stride` for conventional systems, and `$ai-threat-model` for AI/ML, RAG, MCP, tool-using, or multi-agent systems. The AI skill selects relevant STRIDE and MAESTRO analysis.
 - Do not copy long skill instructions into AGENTS.md. Keep repeatable workflows in skills so Codex loads them on demand.
 
 ## Communication
