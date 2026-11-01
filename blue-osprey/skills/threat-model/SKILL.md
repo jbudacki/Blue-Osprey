@@ -1,6 +1,6 @@
 ---
 name: threat-model
-description: "Route threat modeling work. Use when asked to threat model a feature, architecture, PRD, design doc, AI agent workflow, MCP integration, data flow, auth flow, or deployment. Chooses STRIDE for general systems and MAESTRO for agentic AI/RAG/tool systems."
+description: "Route threat modeling work for features, architectures, PRDs, data flows, deployments, and AI systems. Chooses STRIDE for conventional systems and ai-threat-model for AI/ML, RAG, tools, and agents."
 ---
 
 # Threat model router
@@ -10,8 +10,8 @@ Use this skill to choose the right threat-modeling workflow before loading a dee
 ## Choose the framework
 
 - Use `$threat-model-generator-stride` for traditional applications, APIs, services, infrastructure, auth flows, deployment designs, and most system designs.
-- Use `$threat-model-generator-maestro` for agentic AI systems, RAG, LLM tools, MCP servers, autonomous workflows, model orchestration, multi-agent systems, AI memory, and AI control-plane/data-plane analysis.
-- If the system has both a conventional application layer and an agentic AI layer, produce a short split model: STRIDE for the application/control surfaces and MAESTRO for the AI/agent ecosystem.
+- Use `$ai-threat-model` for AI/ML systems, RAG, LLM tools, MCP integrations, autonomous workflows, model orchestration, multi-agent systems, and AI memory. It selects relevant STRIDE and MAESTRO analysis and adds influence-to-action and authority review.
+- If the system has both conventional and AI layers, use `$ai-threat-model` to coordinate a single model: STRIDE for application/control surfaces and MAESTRO for applicable AI/agent layers.
 
 Framework completeness means assessing every applicable category or layer, not forcing a fixed number of findings. Formal reports must include only evidence-supported threats and may explicitly state that none were identified for a category or layer.
 
@@ -39,4 +39,4 @@ Open questions:
 Recommended next tests:
 ```
 
-For formal reports, switch to `$threat-model-generator-stride` or `$threat-model-generator-maestro`.
+For formal conventional reports, switch to `$threat-model-generator-stride`. For formal AI reports, use `$ai-threat-model`, which calls the relevant generator skills and deduplicates their risks.

@@ -6,7 +6,6 @@
 0ba9693d834cf0ce29413941da9e862d43b4f1fc9d0f480b1b0ab0504fbcc0c6  ./blue-osprey/skills/model-security-review/references/code-review-checklist.md
 0ca893be01cb261ae31396238ad0f53d422019f39ba51ebb8c58b79813887ab4  ./blue-osprey/skills/security-evidence-map/tests/automation/fixtures/out-of-range-map.md
 0d16b67659066523d7c371cbb80dd7d09a30e9e6c1df0b62c474abfcb52d9357  ./config/config.portable.toml
-0df2e8e8abdbd3c4a053ea2eb8273f957fe13b935a134901c6fcfa97fb026899  ./blue-osprey/skills/threat-model/SKILL.md
 0fd33078a3d4f9e532ef6932f1b44db9ef3dac9e98886f250d406431b4e9de78  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/finding-first-source.md
 11da78fce828164060d8e03f3d7c2682c0ede515f7ab520c7b13c31a654d9778  ./blue-osprey/skills/threat-model-generator-maestro/SKILL.md
 18e184575d566f768e4d0e6fbb730d101be73663f9976f7fc8b4bc5f46b2f99e  ./blue-osprey/skills/secure-code-review/tests/contract-fixture/validate-review.cjs
@@ -31,7 +30,6 @@
 476b8cc7dd103e84f8651b1e38bf1b1a54eef5693f19a19e70ef2b619710d613  ./blue-osprey/tests/secure-code-review-contract-fixture/cases/missing-context/app.js
 47ee7ba9aa437a7ce87ee2e1b995d568de36dd15f0ed57a0cfb0f8f275305027  ./blue-osprey/skills/crypto-analysis/SKILL.md
 49ed9b440720df8d9a28a2417136c46ab9ec8e74fb95b0f8e94858df5e8074b1  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases.json
-4a0416ad8b82958b723a3e176a17285b146aeea9a62068abf6ddb15df6046f7f  ./README.md
 4b0759b72f6ef5bc349e3fa07ce1c38b069b56aebc1b18069f14e2fa59d76ada  ./blue-osprey/skills/model-security-review/agents/openai.yaml
 4fb16b042bd8ee05b593ab5364a5e6c3ea94ebcc0e4b1ea13507065d9db0af27  ./blue-osprey/skills/risk-retrospective/references/template.md
 50bcb7a914e30d9d2e163085d851d0c726d702b635cfe6a8a6aa49d4addcd1f0  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/README.md
@@ -54,6 +52,7 @@
 7f11412c27e192c6db21afb82cafc52d1f14fba915c7964999c424e2a7ff6d89  ./blue-osprey/tests/secure-code-review-contract-fixture/cases/no-finding/app.js
 841bf42f1f1a5562b511a42f6c795198f54a444641b860512e373207b6ae1276  ./blue-osprey/skills/model-security-review/templates/model-security-review-template.md
 8470d4d13561bbe0c7dea1eaec22acf9efbd8090672a46d852b6650b4e04fd70  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/finding-first-map.json
+85a9e8efecd094acdc9030904f030a1269a9bf076ec03154622485e82274d93c  ./config/AGENTS.md
 86114a1e9b2616f15c9401fe05a108382dd7fc94198bfa5a9043763b46540b3d  ./blue-osprey/skills/secure-code-review/tests/contract-fixture/cases/unconfirmed-scanner-hit/app.js
 86114a1e9b2616f15c9401fe05a108382dd7fc94198bfa5a9043763b46540b3d  ./blue-osprey/tests/secure-code-review-contract-fixture/cases/unconfirmed-scanner-hit/app.js
 8ba56fa54ef12516d17112246d80e47d32f22c275d3ef9ba819a5bc6d2933a67  ./blue-osprey/skills/security-review/SKILL.md
@@ -63,9 +62,11 @@
 9b40c2d6aea9d40d0fb7d9e523b3e680cb1af42aaaca1594e82b3d484bffcb6a  ./blue-osprey/skills/threat-model-generator-stride/agents/openai.yaml
 9b473e61131d36558dd06b60d8c6becb73f0c16cd6a4250886303fed7d4f83a8  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/action-first-source.md
 9d52713652fa5bbb37d124016b47fe272f360dab792839628ec7f64df9993d1e  ./blue-osprey/skills/iam-security/agents/openai.yaml
+a02c7752283722117159217472132becdf63bbc7eb7665330f6eacd22adfd64b  ./blue-osprey/skills/threat-model/SKILL.md
 a4b51b756254285add8af6e47a8badd297ce350c467a56d5b5314c2960aaf1b2  ./blue-osprey/skills/threat-model-generator-maestro/agents/openai.yaml
 b073972f174b8aa1f70f7d3a9b0930656d96b304a5d5f06e8ba907e019e3b155  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/validate-evidence-map.cjs
 b58c8eff702752bbb33ccff6c8742be0f5730a72c0abcc433f960ac8fb6f968f  ./blue-osprey/skills/network-exposure/SKILL.md
+b9e925eced4a4bb02f78db52e374a88c7fdfb3ccfc893bc3a70b872747fc0358  ./blue-osprey/skills/ai-threat-model/SKILL.md
 b9fffcfff55be237dc6bea060914053257f8ba92d4d9de5714a0f0a33135a57d  ./blue-osprey/skills/risk-retrospective/SKILL.md
 bcee979ae3da9a17528394871bdb9cf02a5a908355ac88245ea2d02e778eb4b5  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/run-contract-tests.cjs
 bf027f9c34ba085617a3bf3995ee5225555dfbf9fe4e3fe107e0c649b94ab4a4  ./blue-osprey/skills/secure-code-review/tests/contract-fixture/cases/confirmed-command-injection/app.js
@@ -74,14 +75,15 @@ bf12b9ec2243caa524d81697b6b4c74a110fbdfc99cc80d07dea5eb2cf6d96c5  ./blue-osprey/
 bf668141fbf643b95c3fdaad112c8ccd398f15ad9a778ec173d8e1151ea0f38d  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/invalid-untraceable-row.json
 c167aca77670147302a9ff125ef462fa327d4376995e399ef72b4e0ab08d97e0  ./blue-osprey/skills/security-evidence-map/tests/automation/test_validate_evidence_map.py
 c4e3416b541b34a3198d16e4767d254f09ed14199ccf94addc534566dca70759  ./blue-osprey/skills/security-evidence-map/scripts/validate_evidence_map.py
-cac15deac551a0525ce54a70382c2f08336618e95e892f5835d3b6370dba4ef2  ./config/AGENTS.md
 ce88ab19c22af1010ae3c9a90e8438e83d6df975b81d2e9e84612de04cd6dd5d  ./blue-osprey/skills/risk-retrospective/agents/openai.yaml
 d0c6e97f7dd9ec81e24f9e338cb88ada0de0d3abe773e260141be974c63eca48  ./blue-osprey/skills/3pp-dependency-hygiene/agents/openai.yaml
 d115cdb193f3887a147c6c434fad23fa44f3c0cffc11ade0ee767b098aa38e64  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/invalid-unsupported-corroboration.json
+d1648243c11886f6128db123862ca677b28e41d251cc6badcb0ded9aed8033ea  ./blue-osprey/skills/ai-threat-model/references/report-schema.md
 d6151c15b1b884a50d5cfdf6c4f2f17554062285f7b48a49465ccafd9722195d  ./blue-osprey/skills/security-evidence-map/tests/contract-fixture/cases/invalid-uncontrolled-status.json
 d819feb738deaa77924606104a8d1f0b81ef78856ecf69e9fc2f781225a3b946  ./blue-osprey/skills/security-evidence-map/tests/automation/fixtures/repo/review.md
 da270037b6cd6a48e5e38d8fa6a07821f8cea69ec4e10a6ab4fca835861d08b5  ./blue-osprey/skills/llm-security/scripts/llm_scan.py
 dc6de1d43703c43964e88d8f21596e3b7497688fd9151fc2d9d0bee9c01bd006  ./blue-osprey/skills/secrets-analysis/references/reference.md
+df08af928980b8371f73cb6cbd1c12e6306e2c8c4e14c7734fe0d2e784b6a90f  ./blue-osprey/skills/ai-threat-model/references/analysis-guide.md
 e0023f7fd9f56215e8c3408a68304784528e07ae164c7bf67e6b6643f781025d  ./blue-osprey/skills/security-evidence-map/tests/automation/fixtures/invalid-map.md
 e35f5955a437c08adee6fbb183361bece1ab836d1d7edd6901ebaa2a6d645322  ./blue-osprey/skills/security-principles-review/references/principles.md
 e4e3d4f7500ec26a24d5c2d4a3b9f8c8721a950971e10a8f2b51fc930603edb4  ./blue-osprey/skills/security-evidence-map/agents/openai.yaml
@@ -89,6 +91,7 @@ e5e8b94b946d9828bbc7e6376e788858175d288e78bea68aeaedab8529981b65  ./blue-osprey/
 e77844f3f249104a29a19bfad63f4b8d28d723cb8d6bdac5f97c5d3c625a6fd8  ./blue-osprey/skills/llm-security/agents/openai.yaml
 eaa29df70dafad0b04550e24a2f3d9bc21e81963e797506ec00ac8897a31b18f  ./blue-osprey/skills/humanizer/SKILL.md
 ee015e4741949914cc9e4a0ed8d6d425d419a23334d3fdddeb2e6f893dd39060  ./blue-osprey/skills/model-security-review/references/threat-categories.md
+eff08804fe25c908b2b2e3d52c7c0e17d5a9ed4fc434bed7d2c804e535a31886  ./README.md
 f27b173716df9e732f56b685845914369a554975a96dbc65ce10e8cb99d39a70  ./blue-osprey/skills/crypto-analysis/references/reference.md
 f27f55342f41ba6150aec7d134fb7bcb4f13244c2b4f151c3bc35170e17a2fba  ./blue-osprey/skills/model-security-review/references/README.md
 f97eee1e03cb68dc9c46e9a77ebd5860cfb9f3b4d8e918f0db814e59acc4a5aa  ./blue-osprey/skills/secure-code-review/tests/contract-fixture/expected.json
