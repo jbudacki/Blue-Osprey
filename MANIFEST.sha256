@@ -15,7 +15,7 @@
 2562fdd51e3b3b8a0a4f196acecdb29b3a149ee7dcb4460ac9d691c5056b361b  ./install.sh
 265d09ce0953a5ff08ed268739148a65fe301e7bef6875ee4c159c5612a79ea8  ./blue-osprey/skills/mcp-security-review/references/package-routing.md
 2ac12551c0d116e9c033e7818c32d00c23ffca53d53fa13156d3d99df2dc8bf4  ./config/blue-osprey.config.toml
-2cff00fe8cdcbbf1b9b3166b5da412b4b8e22772e2ae2bd47dd790cafdbbcc69  ./Blue-Osprey.png
+2d89737df310c632954b178451b6d94e8a1f628c7d8f39491d5af4647b755292  ./README.md
 2f31e5a52092abb1903cc0b8364fa80b67bdefb56e800db706b78e6855b3f97a  ./blue-osprey/skills/vibe-code-detection/agents/openai.yaml
 2fee61b34e127aacad099a461a4945d39a71507bcc4628425acad2967b8aac74  ./blue-osprey/skills/vibe-code-detection/references/reference.md
 3521a76358db668dbbe27434717203136dc29ec7ccef7c970939871860396ad2  ./blue-osprey/skills/vibe-code-detection/SKILL.md
@@ -91,7 +91,7 @@ e5e8b94b946d9828bbc7e6376e788858175d288e78bea68aeaedab8529981b65  ./blue-osprey/
 e77844f3f249104a29a19bfad63f4b8d28d723cb8d6bdac5f97c5d3c625a6fd8  ./blue-osprey/skills/llm-security/agents/openai.yaml
 eaa29df70dafad0b04550e24a2f3d9bc21e81963e797506ec00ac8897a31b18f  ./blue-osprey/skills/humanizer/SKILL.md
 ee015e4741949914cc9e4a0ed8d6d425d419a23334d3fdddeb2e6f893dd39060  ./blue-osprey/skills/model-security-review/references/threat-categories.md
-eff08804fe25c908b2b2e3d52c7c0e17d5a9ed4fc434bed7d2c804e535a31886  ./README.md
+eec9784734e87815d63d4629ccd8664d7999b4a3f78fb2479d6b8d1c186df297  ./Blue-Osprey.png
 f27b173716df9e732f56b685845914369a554975a96dbc65ce10e8cb99d39a70  ./blue-osprey/skills/crypto-analysis/references/reference.md
 f27f55342f41ba6150aec7d134fb7bcb4f13244c2b4f151c3bc35170e17a2fba  ./blue-osprey/skills/model-security-review/references/README.md
 f97eee1e03cb68dc9c46e9a77ebd5860cfb9f3b4d8e918f0db814e59acc4a5aa  ./blue-osprey/skills/secure-code-review/tests/contract-fixture/expected.json

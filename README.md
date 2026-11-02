@@ -1,6 +1,8 @@
 # Blue Osprey
 
-![Blue-Osprey Image](Blue-Osprey.png)
+<p align="center">
+  <img src="Blue-Osprey.png" alt="Blue Osprey logo" width="320">
+</p>
 
 **Blue Osprey** is a security-focused Codex agent toolkit made of reusable
 skills, global guidance, helper scripts, and conservative configuration.
