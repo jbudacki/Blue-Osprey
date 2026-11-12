@@ -441,9 +441,4 @@ When adding or changing a skill:
 
 ## Roadmap
 
-1. Decide whether Cloud Docs remains a separately managed skill or becomes
-   an optional Blue Osprey integration.
-2. Add Confluence documentation integration.
-3. Add NIST AI RMF and AI Defense Matrix mapping.
-4. Add optional evidence-map export formats only where they preserve the same
-   evidence and status contract.
+
